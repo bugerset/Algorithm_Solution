@@ -1,11 +1,9 @@
-import sys
-n = int(sys.stdin.readline())
-k = [0]*10001
+default = [1,1,2,2,2,8]
 
-for i in range(n):
-    num = int(sys.stdin.readline())
-    k[num-1] += 1
+hand = list(map(int,input().split()))
 
-for i in range(0,10001):
-    for j in range(k[i]):
-        print(i+1)
+for i in range(6):
+    if hand[i] > default[i]:
+        print(-(hand[i]-default[i]),end=" ")
+    else:
+        print(default[i]-hand[i],end=" ")

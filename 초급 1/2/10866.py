@@ -1,4 +1,4 @@
-# 10866 덱
+# 10866 덱 //몰랐는데 pop()이 popleft()라는것이 존재한다.
 import sys
 n = int(sys.stdin.readline())
 k = []
@@ -16,13 +16,13 @@ for i in range(n):
                 print(-1)
             else:
                 print(k[0])
-                del k[0]
+                k.popleft()
         else:
             if len(k) == 0:
                 print(-1)
             else:
                 print(k[-1])
-                del k[-1]
+                k.pop()
     elif cm[0] == "size":
         print(len(k))
     elif cm[0] == "empty":
