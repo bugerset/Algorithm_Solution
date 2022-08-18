@@ -1,4 +1,1 @@
-n,c=map(int,input().split())
-s=list(map(int,input().split()))
-s.sort(reverse=True)
-print(s[c-1])
+print(1.1 + 1.1 == 2.2)
