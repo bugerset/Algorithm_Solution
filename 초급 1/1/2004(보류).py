@@ -1,22 +1,15 @@
-# 2004 조합 0의 개수
-import sys
-sys.setrecursionlimit(10**6)
+# 2004 조합 0의 개수 // 답 인용
 
-def fac(n):
-    if n == 0:
-        return 1
-    elif n == 1:
-        return 1
-    else:
-        return n * fac(n-1)
+def counting(n, k):
+    cnt = 0
+    while n:
+        n //= k
+        cnt += n
+    return cnt
 
 a,b = map(int,input().split())
-cnt = 0
-k=list(str(int(fac(a)/(fac(a-b)*fac(b)))))
 
-for i in range(len(k)-1,-1,-1):
-    if k[i] == "0":
-        cnt += 1
-    else:
-        print(cnt)
-        break
+five_c = counting(a,5) - counting(b,5) - counting(a-b,5)
+two_c = counting(a,2) - counting(b,2) - counting(a-b,2)
+
+print(min(five_c,two_c))
