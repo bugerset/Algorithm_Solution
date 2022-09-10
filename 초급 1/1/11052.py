@@ -15,4 +15,4 @@ for i in range(1,n+1):
         # dp[1] + cp[2]가 크면 dp[3]으로
         # dp[0] + cp[3]이 크면 dp[3]으로
 
-print(dp[n])
+print(dp)
